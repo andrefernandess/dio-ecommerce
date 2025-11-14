@@ -1,24 +1,66 @@
-# README
+// ...existing code...
+# Projeto inicial DIO RR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Descrição
+---------
+Projeto de exemplo em Ruby on Rails usado no curso DIO. Contém recursos mínimos para gerenciar Carros e Fornecedores, seeds, rotas customizadas e exemplos de deploy com Docker/Kamal.
 
-Things you may want to cover:
+Requisitos
+---------
+- Ruby 3.4.7 (ver [.ruby-version](.ruby-version))
+- PostgreSQL (ou ajuste em [config/database.yml](config/database.yml))
+- Node/npm (opcional para assets)
+- Bundler (gem)
 
-* Ruby version
+Instalação local
+----------------
+1. Instalar dependências:
+-------------------------
+- bundle install
 
-* System dependencies
+2. Configurar banco (copiar/editar `config/database.yml` se necessário) e preparar:
+----------------------------------------------------------------------------------
+bin/setup
 
-* Configuration
+bin/rails db:prepare
+bin/rails db:seed
 
-* Database creation
+Como rodar
+---------
+- Servidor de desenvolvimento:
+  - rails s
 
-* Database initialization
+Banco de dados e seeds
+----------------------
+- Seeds disponíveis em [db/seeds.rb](db/seeds.rb).
+- Migrations em [db/migrate/](db/migrate/).
 
-* How to run the test suite
+Principais rotas e controllers
+------------------------------
+- Rotas de carros: veja [config/routes.rb](config/routes.rb) e ações em [`CarrosController#criar`](app/controllers/carros_controller.rb) / [`CarrosController#alterar`](app/controllers/carros_controller.rb).
+- Modelos: [`Carro`](app/models/carro.rb) e [`Fornecedor`](app/models/fornecedor.rb).
+- Fornecedores CRUD gerado via resources: [`FornecedoresController`](app/controllers/fornecedores_controller.rb).
 
-* Services (job queues, cache servers, search engines, etc.)
+Testes
+------
+- Executar suíte de testes:
+---------------------------
+- rails test
 
-* Deployment instructions
+- System tests (CI): ver [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
-* ...
+Deploy / Docker
+---------------
+- Imagem Docker e entrada: [Dockerfile](Dockerfile) e [bin/docker-entrypoint](bin/docker-entrypoint).
+- Deploy com Kamal: [config/deploy.yml](config/deploy.yml) e binário [bin/kamal](bin/kamal).
+
+Arquivos úteis
+--------------
+- Rotas: [config/routes.rb](config/routes.rb)
+- Seeds: [db/seeds.rb](db/seeds.rb)
+- Setup local: [bin/setup](bin/setup)
+- Dev server: [bin/dev](bin/dev)
+- Controller Carros: [app/controllers/carros_controller.rb](app/controllers/carros_controller.rb)
+- Model Carro: [app/models/carro.rb](app/models/carro.rb)
+- Model Fornecedor: [app/models/fornecedor.rb](app/models/fornecedor.rb)
+- Inflexões PT-BR: [config/initializers/inflections.rb](config/initializers/inflections.rb) (teste em [test_inflactions.rb](test_inflactions.rb))
