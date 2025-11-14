@@ -1,0 +1,22 @@
+<div id="<%= dom_id fornecedor %>">
+  <div>
+    <strong>Nome:</strong>
+    <%= fornecedor.nome %>
+  </div>
+
+  <div>
+    <strong>Cnpj:</strong>
+    <%= fornecedor.cnpj %>
+  </div>
+
+  <div>
+    <strong>Endereco:</strong>
+    <%= fornecedor.endereco %>
+  </div>
+
+  <div>
+    <strong>Data de criacao:</strong>
+    <%= formatar_data(fornecedor.created_at) %>
+  </div>
+  <hr>
+</div>

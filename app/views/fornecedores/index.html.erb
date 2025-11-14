@@ -1,0 +1,20 @@
+<section class="text-center container"> 
+  <p style="color: green"><%= notice %></p>
+
+  <%= render "/shared/h1_bem_vindo" %>
+
+  <% content_for :title, "Fornecedores" %>
+
+  <h1>Fornecedores</h1>
+
+  <div id="fornecedores">
+    <% @fornecedores.each do |fornecedor| %>
+      <%= render fornecedor %>
+      <p>
+        <%= link_to "Show this fornecedor", fornecedor, class: "btn btn-primary" %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "Novo fornecedor", new_fornecedor_path, class: "btn btn-success" %>
+</section>
