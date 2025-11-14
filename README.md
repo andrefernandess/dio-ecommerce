@@ -49,11 +49,6 @@ Testes
 
 - System tests (CI): ver [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
-Deploy / Docker
----------------
-- Imagem Docker e entrada: [Dockerfile](Dockerfile) e [bin/docker-entrypoint](bin/docker-entrypoint).
-- Deploy com Kamal: [config/deploy.yml](config/deploy.yml) e binário [bin/kamal](bin/kamal).
-
 Arquivos úteis
 --------------
 - Rotas: [config/routes.rb](config/routes.rb)
